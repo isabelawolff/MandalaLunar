@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Mandala.Models.MandalaLunar>
+﻿@model Mandala.Models.MandalaLunar
 
 @{
     ViewBag.Title = "Index";
@@ -9,19 +9,98 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdMandalaLunar }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdMandalaLunar }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdMandalaLunar })
-        </td>
-    </tr>
-}
+<div>
+    <h4>Mandala lunar @Html.DisplayFor(model => model.Mes)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Quantidades de registros
+        </dt>
 
-</table>
+        <dd>
+            @Html.DisplayFor(model => model.QuantidadeDiasCadastrados)
+        </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dt>
+            Média de amorosidade no mês
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MediaDeAmorosidadeNoMes)
+        </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dt>
+            Média de foco no mês
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MediaDeFocoNoMes)
+        </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dt>
+            Média de força de ação no mês
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MediaDeForcaDeAcaoNoMes)
+        </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dt>
+            Média de vitalidade no mês
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MediaDeVitalidadeNoMes)
+        </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dt>
+            Média de extroversão no mês
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MediaDeExtroversaoNoMes)
+        </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dt>
+            Média de energia sexual no mês
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MediaDeEnergiaSexualNoMes)
+        </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dt>
+            Média de autoconfiança pessoal no mês
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MediaDeAutoconfiancaPessoalNoMes)
+        </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dt>
+            Média de autoconfiança profissional no mês
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MediaDeAutoconfiancaProfissionalNoMes)
+        </dd>
+    </dl>
+
+</div>

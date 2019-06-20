@@ -13,22 +13,40 @@ namespace Mandala.Controllers
 {
     public class ParametroController : Controller
     {
-        private MandalaContext db = new MandalaContext();
+        private ParametroRepository db = new ParametroRepository();
 
         // GET: Parametro
         public ActionResult Index()
         {
-            return View(db.Parametros.ToList());
+            //var im = new DiaMandala()
+            //{
+            //    Data = DateTime.Today,
+            //    Amorosidade = 7,
+            //    AutoconfiancaPessoal = 8,
+            //    AutoconfiancaProfissional = 9,
+            //    EnergiaSexual = 10,
+            //    Extroversao = 6,
+            //    Foco = 5,
+            //    ForcaDeAcao = 4,
+            //    Vitalidade = 3
+
+            //};
+
+            //im.GerarId();
+
+            //db.CreateParametro(im);
+
+            return View(db.ReadParametros());
         }
 
         // GET: Parametro/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Parametro parametro = db.Parametros.Find(id);
+            DiaMandala parametro = db.ReadParametro(id);
             if (parametro == null)
             {
                 return HttpNotFound();
@@ -47,26 +65,37 @@ namespace Mandala.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdParametro,NomeParametro")] Parametro parametro)
+        public ActionResult Create(DiaMandala parametro)
         {
-            if (ModelState.IsValid)
+            List<string> errosValidacao = new List<string>();
+
+            if (ModelState.IsValid && parametro.Validar(out errosValidacao))
             {
-                db.Parametros.Add(parametro);
-                db.SaveChanges();
+                parametro.GerarId();
+                db.CreateParametro(parametro);
+                
                 return RedirectToAction("Index");
+            }
+
+            if (errosValidacao.Any())
+            {
+                foreach (var ev in errosValidacao)
+                {
+                    ModelState.AddModelError("Geral", ev);
+                }
             }
 
             return View(parametro);
         }
 
         // GET: Parametro/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Parametro parametro = db.Parametros.Find(id);
+            DiaMandala parametro = db.ReadParametro(id);
             if (parametro == null)
             {
                 return HttpNotFound();
@@ -79,25 +108,35 @@ namespace Mandala.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdParametro,NomeParametro")] Parametro parametro)
+        public ActionResult Edit(DiaMandala parametro)
         {
-            if (ModelState.IsValid)
+            List<string> errosValidacao = new List<string>();
+
+            if (ModelState.IsValid && parametro.Validar(out errosValidacao))
             {
-                db.Entry(parametro).State = EntityState.Modified;
-                db.SaveChanges();
+                db.UpdateParametro(parametro);
                 return RedirectToAction("Index");
             }
+            
+            if (errosValidacao.Any())
+            {
+                foreach (var ev in errosValidacao)
+                {
+                    ModelState.AddModelError("Geral", ev);
+                }
+            }
+
             return View(parametro);
         }
 
         // GET: Parametro/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Parametro parametro = db.Parametros.Find(id);
+            DiaMandala parametro = db.ReadParametro(id);
             if (parametro == null)
             {
                 return HttpNotFound();
@@ -108,21 +147,12 @@ namespace Mandala.Controllers
         // POST: Parametro/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
-            Parametro parametro = db.Parametros.Find(id);
-            db.Parametros.Remove(parametro);
-            db.SaveChanges();
+            db.DeleteParametro(id);
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        
     }
 }

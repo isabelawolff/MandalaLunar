@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mandala", "Mandala\Mandala.csproj", "{AED88C77-560D-47C5-8FF3-81C83203ABDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MandalaTest", "MandalaTest\MandalaTest.csproj", "{1B4D7F05-4353-4B50-ADAE-624F489CD44F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AED88C77-560D-47C5-8FF3-81C83203ABDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AED88C77-560D-47C5-8FF3-81C83203ABDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AED88C77-560D-47C5-8FF3-81C83203ABDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B4D7F05-4353-4B50-ADAE-624F489CD44F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B4D7F05-4353-4B50-ADAE-624F489CD44F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B4D7F05-4353-4B50-ADAE-624F489CD44F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B4D7F05-4353-4B50-ADAE-624F489CD44F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

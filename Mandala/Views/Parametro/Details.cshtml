@@ -1,4 +1,4 @@
-﻿@model Mandala.Models.Parametro
+﻿@model Mandala.Models.DiaMandala
 
 @{
     ViewBag.Title = "Details";
@@ -11,16 +11,106 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.NomeParametro)
+            @Html.DisplayNameFor(model => model.Id)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NomeParametro)
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Amorosidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amorosidade)
+        </dd>
+
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AutoconfiancaPessoal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AutoconfiancaPessoal)
+        </dd>
+
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AutoconfiancaProfissional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AutoconfiancaProfissional)
+        </dd>
+
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EnergiaSexual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnergiaSexual)
+        </dd>
+
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Extroversao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extroversao)
+        </dd>
+
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Foco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foco)
+        </dd>
+
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ForcaDeAcao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ForcaDeAcao)
+        </dd>
+
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vitalidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vitalidade)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdParametro }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

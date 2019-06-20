@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Mandala.Models.Parametro>
+﻿@model IEnumerable<Mandala.Models.DiaMandala>
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.NomeParametro)
+            Itens
         </th>
         <th></th>
     </tr>
@@ -20,12 +20,12 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.NomeParametro)
+            @Html.DisplayFor(modelItem => item.Data)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdParametro }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdParametro }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdParametro })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }
