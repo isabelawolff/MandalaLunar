@@ -132,7 +132,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CategoriaParametroController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MandalaLunarController.cs" />
     <Compile Include="Controllers\ParametroController.cs" />
@@ -191,11 +190,6 @@
     <Content Include="Views\Parametro\Details.cshtml" />
     <Content Include="Views\Parametro\Edit.cshtml" />
     <Content Include="Views\Parametro\Index.cshtml" />
-    <Content Include="Views\CategoriaParametro\Create.cshtml" />
-    <Content Include="Views\CategoriaParametro\Delete.cshtml" />
-    <Content Include="Views\CategoriaParametro\Details.cshtml" />
-    <Content Include="Views\CategoriaParametro\Edit.cshtml" />
-    <Content Include="Views\CategoriaParametro\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
